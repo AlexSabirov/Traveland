@@ -235,7 +235,7 @@ body {
     width: 100%;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    background-color: #000000;
+    background-color: #ffffff;
   }
   .header__burger::before, .header__burger::after {
     content: "";
@@ -291,13 +291,16 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: left 0.3s;
+  transition: left 0.3s;
 }
 
 @media (max-width: 769px) {
   .navigation__menu {
-    display: none;
-    -webkit-transition: left 0.3s ease 0s;
-    transition: left 0.3s ease 0s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0;
     left: -100%;
     top: 0;
   }
@@ -320,6 +323,7 @@ body {
     height: 100%;
     overflow: auto;
     left: 0;
+    font-size: 1em;
   }
 }
 

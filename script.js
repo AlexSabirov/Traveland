@@ -14,19 +14,17 @@ if (menuBurger) {
 
 const items = document.querySelectorAll(".special-offers__item");
 const sliderLine = document.querySelector(".special-offers__items");
-console.log(items);
 let count = 0;
 let width;
 
 function init() {
 	width = document.querySelector(".special-offers__items-wrapper").offsetWidth;
-	console.log(width);
 	sliderLine.style.width = width * items.length + 'px';
-	console.log(sliderLine.style.width);
 	items.forEach(item => {
 		item.style.width = width + 'px';
 		item.style.height = 'auto';
 	})
+	rollSlider();
 }
 
 window.addEventListener('resize', init())

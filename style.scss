@@ -134,7 +134,7 @@ body {
 
 /* Header */
 .header {
-	background: url(/images/HeaderBackground.png) no-repeat;
+	background-image: url("../images/HeaderBackground.png");
 	background-size: cover;
 
 	&__items {
@@ -386,7 +386,7 @@ body {
 	}
 
 	&__items-wrapper {
-		max-width: 260px;
+		max-width: 780px;
 		margin: 0 auto;
 		overflow: hidden;
 	}

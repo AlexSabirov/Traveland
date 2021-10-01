@@ -92,8 +92,21 @@ body {
   font-size: 18px;
 }
 
+@media (max-width: 769px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
+
 .logo {
   font-family: "Ribeye", cursive;
+  cursor: pointer;
 }
 
 /* Шаблоны */
@@ -172,6 +185,7 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    margin-bottom: 70px;
   }
 }
 
@@ -186,16 +200,28 @@ body {
   margin-bottom: 250px;
 }
 
+@media (max-width: 769px) {
+  .header__promo {
+    margin-bottom: 70px;
+  }
+}
+
 .header__title {
   max-width: 65%;
   margin-bottom: 30px;
 }
 
+@media (max-width: 769px) {
+  .header__title {
+    max-width: 90%;
+  }
+}
+
 .header__title h1 {
   font-family: "Gelasio";
   font-weight: bold;
-  font-size: 65px;
-  line-height: 78px;
+  font-size: 3.6em;
+  line-height: 120%;
   color: #ffffff;
 }
 
@@ -207,6 +233,12 @@ body {
 .header__text p {
   color: #ffffff;
   opacity: 0.6;
+}
+
+@media (max-width: 769px) {
+  .header__text {
+    max-width: 50%;
+  }
 }
 
 .header__button {
@@ -337,10 +369,16 @@ body {
       align-self: baseline;
   padding: 10px;
   border-radius: 50%;
+  -webkit-transition: all 0.3ms ease;
+  transition: all 0.3ms ease;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .navigation__link:hover {
   background: rgba(101, 114, 123, 0.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .navigation__link:active {
@@ -376,6 +414,13 @@ body {
   margin-bottom: 140px;
 }
 
+@media (max-width: 769px) {
+  .popular-location__body {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
 .popular-location__title {
   margin-bottom: 20px;
 }
@@ -391,6 +436,13 @@ body {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+}
+
+@media (max-width: 769px) {
+  .popular-location__items {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .popular-location__item {
@@ -444,6 +496,12 @@ body {
   margin-bottom: 140px;
 }
 
+@media (max-width: 769px) {
+  .special-offers__body {
+    margin-bottom: 40px;
+  }
+}
+
 .special-offers__title {
   margin-bottom: 20px;
 }
@@ -453,10 +511,22 @@ body {
   max-width: 656px;
 }
 
+@media (max-width: 769px) {
+  .special-offers__subtitle {
+    margin-bottom: 60px;
+  }
+}
+
 .special-offers__items-wrapper {
   max-width: 780px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media (max-width: 769px) {
+  .special-offers__items-wrapper {
+    max-width: 260px;
+  }
 }
 
 .special-offers__items {
@@ -475,7 +545,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 260px;
+  width: 260px;
+  margin-right: 10px;
 }
 
 .special-offers__image {

@@ -85,10 +85,17 @@ select {
 body {
 	font-family: "Roboto", sans-serif;
 	font-size: 18px;
+	@media (max-width: 769px) {
+		font-size: 14px;
+	}
+	@media (max-width: 480px) {
+		font-size: 12px;
+	}
 }
 
 .logo {
 	font-family: "Ribeye", cursive;
+	cursor: pointer;
 }
 
 /* Шаблоны */
@@ -150,6 +157,7 @@ body {
 		@media (max-width: 769px) {
 			display: flex;
 			justify-content: space-between;
+			margin-bottom: 70px;
 		}
 	}
 
@@ -157,16 +165,22 @@ body {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 250px;
+		@media (max-width: 769px) {
+			margin-bottom: 70px;
+		}
 	}
 
 	&__title {
 		max-width: 65%;
 		margin-bottom: 30px;
+		@media (max-width: 769px) {
+			max-width: 90%;
+		}
 		h1 {
 			font-family: "Gelasio";
 			font-weight: bold;
-			font-size: 65px;
-			line-height: 78px;
+			font-size: 3.6em;
+			line-height: 120%;
 			color: #ffffff;
 		}
 	}
@@ -178,6 +192,9 @@ body {
 		}
 		max-width: 33%;
 		margin-bottom: 40px;
+		@media (max-width: 769px) {
+			max-width: 50%;
+		}
 	}
 
 	&__button {
@@ -287,8 +304,11 @@ body {
 		align-self: baseline;
 		padding: 10px;
 		border-radius: 50%;
+		transition: all 0.3ms ease;
+		transform: scale(1);
 		&:hover {
 			background: rgba(101, 114, 123, 0.2);
+			transform: scale(1.2);
 		}
 		&:active {
 			background: rgba(144, 164, 179, 0.2);
@@ -318,6 +338,10 @@ body {
 	&__body {
 		margin-top: 140px;
 		margin-bottom: 140px;
+		@media (max-width: 769px) {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
 	}
 
 	&__title {
@@ -333,6 +357,9 @@ body {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 30px;
+		@media (max-width: 769px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	&__item {
@@ -374,6 +401,9 @@ body {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 140px;
+		@media (max-width: 769px) {
+			margin-bottom: 40px;
+		}
 	}
 
 	&__title {
@@ -383,12 +413,18 @@ body {
 	&__subtitle {
 		margin-bottom: 60px;
 		max-width: 656px;
+		@media (max-width: 769px) {
+			margin-bottom: 60px;
+		}
 	}
 
 	&__items-wrapper {
 		max-width: 780px;
 		margin: 0 auto;
 		overflow: hidden;
+		@media (max-width: 769px) {
+			max-width: 260px;
+		}
 	}
 
 	&__items {
@@ -399,7 +435,8 @@ body {
 	&__item {
 		display: flex;
 		flex-direction: column;
-		min-width: 260px;
+		width: 260px;
+		margin-right: 10px;
 	}
 
 	&__image {

@@ -435,8 +435,7 @@ body {
 	&__item {
 		display: flex;
 		flex-direction: column;
-		width: 260px;
-		margin-right: 10px;
+		min-width: 260px;
 	}
 
 	&__image {
@@ -498,7 +497,7 @@ body {
 			position: absolute;
 			left: 0;
 			width: 100%;
-			height: 68%;
+			height: 66%;
 			background-color: #000000;
 		}
 		span {
@@ -534,7 +533,7 @@ body {
 			position: absolute;
 			left: 100%;
 			width: 100%;
-			height: 68%;
+			height: 66%;
 			background-color: #000000;
 		}
 		span {
@@ -581,6 +580,9 @@ body {
 
 .news {
 	margin-bottom: 140px;
+	@media (max-width: 769px) {
+		margin-bottom: 40px;
+	}
 
 	&__body {
 		display: flex;
@@ -598,8 +600,11 @@ body {
 
 	&__viewport {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 50% 50%;
 		gap: 30px;
+		@media (max-width: 1000px) {
+			grid-template-columns: 1fr;
+		}
 	}
 }
 
@@ -609,15 +614,100 @@ body {
 		flex-direction: column;
 	}
 
+	&__wrapper {
+		@media (max-width: 1000px) {
+			max-width: 690px;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+		@media (max-width: 769px) {
+			max-width: 460px;
+		}
+		@media (max-width: 480px) {
+			max-width: 230px;
+		}
+	}
+
 	&__items {
 		display: flex;
 		flex-direction: column;
+		transition: all 0.3s ease;
+		@media (max-width: 1000px) {
+			flex-direction: row;
+		}
 	}
 
 	&__item {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
+		@media (max-width: 1000px) {
+			flex-direction: column;
+			align-items: flex-start;
+			padding-right: 10px;
+			min-width: 230px;
+		}
+	}
+
+	&__buttons {
+		display: none;
+		@media (max-width: 1000px) {
+			margin-top: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&__prev {
+		position: relative;
+		width: 3px;
+		height: 15px;
+		display: block;
+		margin-right: 100px;
+		span,
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 66%;
+			background-color: #000000;
+		}
+		span {
+			top: 0;
+			transform: rotate(45deg);
+			margin-right: 20px;
+		}
+		&::before {
+			bottom: 0;
+			transform: rotate(-45deg);
+		}
+	}
+
+	&__next {
+		position: relative;
+		width: 3px;
+		height: 15px;
+		display: block;
+		span,
+		&::before {
+			content: "";
+			position: absolute;
+			left: 100%;
+			width: 100%;
+			height: 66%;
+			background-color: #000000;
+		}
+		span {
+			top: 0;
+			transform: rotate(-45deg);
+			margin-right: 20px;
+		}
+		&::before {
+			bottom: 0;
+			transform: rotate(45deg);
+		}
 	}
 
 	&__images {
@@ -661,6 +751,10 @@ body {
 	&__images {
 		width: 100%;
 		margin-bottom: 35px;
+		@media (max-width: 1000px) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
 	}
 
 	&__name {
@@ -692,9 +786,10 @@ body {
 	background: rgba(38, 148, 153, 0.04);
 
 	&__body {
-		padding: 70px 0 100px 0;
+		padding: 70px 15px 100px 15px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 2fr;
+		gap: 15px;
 	}
 
 	&__info {

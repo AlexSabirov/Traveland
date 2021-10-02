@@ -545,8 +545,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 260px;
-  margin-right: 10px;
+  min-width: 260px;
 }
 
 .special-offers__image {
@@ -619,7 +618,7 @@ body {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 68%;
+  height: 66%;
   background-color: #000000;
 }
 
@@ -660,7 +659,7 @@ body {
   position: absolute;
   left: 100%;
   width: 100%;
-  height: 68%;
+  height: 66%;
   background-color: #000000;
 }
 
@@ -719,6 +718,12 @@ body {
   margin-bottom: 140px;
 }
 
+@media (max-width: 769px) {
+  .news {
+    margin-bottom: 40px;
+  }
+}
+
 .news__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -741,9 +746,16 @@ body {
 .news__viewport {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   gap: 30px;
+}
+
+@media (max-width: 1000px) {
+  .news__viewport {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .viewport__active {
@@ -756,6 +768,26 @@ body {
           flex-direction: column;
 }
 
+@media (max-width: 1000px) {
+  .viewport__wrapper {
+    max-width: 690px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 769px) {
+  .viewport__wrapper {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 480px) {
+  .viewport__wrapper {
+    max-width: 230px;
+  }
+}
+
 .viewport__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -764,6 +796,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1000px) {
+  .viewport__items {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .viewport__item {
@@ -776,6 +819,98 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .viewport__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-right: 10px;
+    min-width: 230px;
+  }
+}
+
+.viewport__buttons {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .viewport__buttons {
+    margin-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.viewport__prev {
+  position: relative;
+  width: 3px;
+  height: 15px;
+  display: block;
+  margin-right: 100px;
+}
+
+.viewport__prev span, .viewport__prev::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 66%;
+  background-color: #000000;
+}
+
+.viewport__prev span {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-right: 20px;
+}
+
+.viewport__prev::before {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.viewport__next {
+  position: relative;
+  width: 3px;
+  height: 15px;
+  display: block;
+}
+
+.viewport__next span, .viewport__next::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  height: 66%;
+  background-color: #000000;
+}
+
+.viewport__next span {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-right: 20px;
+}
+
+.viewport__next::before {
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .viewport__images {
@@ -824,6 +959,13 @@ body {
   margin-bottom: 35px;
 }
 
+@media (max-width: 1000px) {
+  .active__images {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 .active__name {
   margin-bottom: 10px;
   font-family: "Gelasio";
@@ -852,11 +994,12 @@ body {
 }
 
 .footer__body {
-  padding: 70px 0 100px 0;
+  padding: 70px 15px 100px 15px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 2fr;
       grid-template-columns: 1fr 1fr 1fr 2fr;
+  gap: 15px;
 }
 
 .footer__info {

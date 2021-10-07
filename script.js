@@ -10,6 +10,25 @@ if (menuBurger) {
 	})
 }
 
+// Modal Window
+const modalWindow = document.querySelector('.booking-now__items');
+const modalWindowOpen = document.querySelector('.navigation__button');
+const modalWindowClose = document.querySelector('.booking-now__close');
+if (modalWindow) {
+	const modalBody = document.querySelector('.booking-now');
+	const modalItems = document.querySelector('.booking-now__items')
+	modalWindowOpen.addEventListener('click', () => {
+		document.body.classList.add('lock');
+		modalBody.classList.add('active');
+		modalItems.classList.add('active');
+	})
+	modalWindowClose.addEventListener('click', () => {
+		document.body.classList.remove('lock');
+		modalBody.classList.remove('active');
+		modalItems.classList.remove('active');
+	})
+}
+
 // Slider Special Offers
 
 const itemsSO = document.querySelectorAll(".special-offers__item");

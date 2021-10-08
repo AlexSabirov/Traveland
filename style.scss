@@ -400,6 +400,10 @@ body {
 		cursor: pointer;
 		margin-bottom: 10px;
 		border: 3px solid #a70505;
+		transition: all 0.3s ease;
+		&:hover {
+			transform: scale(1.1) rotate(90deg);
+		}
 		span,
 		&::after {
 			position: absolute;
